@@ -19,6 +19,7 @@ mod models;
 mod repositories;
 mod routers;
 mod services;
+mod utils;
 
 #[derive(Debug, Clone)]
 pub struct AppState {

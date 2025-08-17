@@ -6,19 +6,13 @@ use axum::{
     response::IntoResponse,
     routing::get,
 };
-use serde::{Deserialize, Serialize};
 use serde_json::json;
 use uuid::Uuid;
 
 use crate::{
     AppState, error::http_error::HttpError, repositories::user_repository::UserRepository,
+    utils::page_params::PageParams,
 };
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct PageParams {
-    pub page: Option<u32>,
-    pub size: Option<usize>,
-}
 
 pub fn user_router() -> Router {
     return Router::new()
