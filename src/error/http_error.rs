@@ -23,6 +23,13 @@ impl HttpError {
             status: StatusCode::INTERNAL_SERVER_ERROR,
         };
     }
+
+    pub fn not_found(message: impl Into<String>) -> Self {
+        return Self {
+            message: message.into(),
+            status: StatusCode::NOT_FOUND,
+        };
+    }
 }
 
 impl IntoResponse for HttpError {

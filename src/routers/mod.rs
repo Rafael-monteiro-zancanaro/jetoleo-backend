@@ -14,7 +14,7 @@ use crate::{
 pub fn create_router(app_state: Arc<AppState>) -> Router {
     let api_route = Router::new()
         .nest("/health", health_router())
-        .nest("/user", user_router())
+        .nest("/users", user_router())
         .layer(TraceLayer::new_for_http())
         .layer(Extension(app_state));
 
