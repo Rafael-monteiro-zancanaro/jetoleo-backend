@@ -1,0 +1,19 @@
+[package]
+edition = "2024"
+name = "jetoleo-backend"
+version = "0.1.0"
+
+[dependencies]
+async-trait = "0.1.89"
+axum = "0.8.4"
+chrono = {version = "0.4.41", features = ["serde"]}
+dotenv = "0.15.0"
+serde = {version = "1.0.183", features = ["derive"]}
+serde_json = "1.0.104"
+sqlx = {version = "0.8.6", features = ["runtime-async-std-native-tls", "postgres", "chrono", "uuid"]}
+tokio = {version = "1.47.1", features = ["rt-multi-thread"]}
+tower = "0.5.2"
+tower-http = {version = "0.6.6", features = ["cors", "trace"]}
+tracing-subscriber = "0.3.19"
+uuid = {version = "1.18.0", features = ["serde", "v4"]}
+validator = {version = "0.20.0", features = ["derive"]}
